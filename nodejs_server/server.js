@@ -502,6 +502,4 @@ function catchAsync(fn) {
   };
 }
 
-const handler = serverless(app);
-
-module.exports = handler;
+exports.handler = serverless(app);
