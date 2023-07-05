@@ -5,7 +5,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const fs = require("fs");
 const Model = require("./model");
-const cors = require("cors");
+//const cors = require("cors");
 const Caoyao = require("./caoyao_model");
 const serverless = require("serverless-http");
 
@@ -15,7 +15,7 @@ mongoose.connect(MONGO_SERVER_ADDRESS).then(() => {
 
 const app = express();
 
-app.use(cors());
+//app.use(cors());
 const suoyinData = JSON.parse(fs.readFileSync("./suoyin.json", "utf-8"));
 
 // app.listen(PORT, () => {
