@@ -1,9 +1,9 @@
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
-  directory="/nodejs_servery"
+  directory="/nodejs_server"
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
-  to = "/nodejs_servery/server.js:splat"
+  to = "/nodejs_server/server.js:splat"
