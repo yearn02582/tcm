@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 
-const href = location.href.endsWith("/") ? location.href : `${location.href}/`;
+//const href = location.href.endsWith("/") ? location.href : `${location.href}/`;
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${href}api`,
+    baseUrl: `https://chinatm.netlify.app/.netlify/functions/server`,
   }),
   endpoints(build) {
     return {
