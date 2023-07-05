@@ -1,9 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 
+const href = location.href.endsWith("/") ? location.href : `${location.href}/`;
+
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://plzoe.8866.org:18889",
+    baseUrl: `${href}api`,
   }),
   endpoints(build) {
     return {
