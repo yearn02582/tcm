@@ -8,12 +8,15 @@ const Model = require("./model");
 //const cors = require("cors");
 const Caoyao = require("./caoyao_model");
 const serverless = require("serverless-http");
+const morgan = require("morgan");
 
 mongoose.connect(MONGO_SERVER_ADDRESS).then(() => {
   console.log("Mongo服务器连接成功", MONGO_SERVER_ADDRESS);
 });
 
 const app = express();
+
+app.use(morgan("dev"));
 
 //app.use(cors());
 const suoyinData = [
