@@ -418,7 +418,7 @@ const suoyinData = [
 
 //用于根据症候获取对应ID
 
-app.get("/zhenghou/:name", (req, res, next) => {
+app.get("/.netlify/functions/server/zhenghou/:name", (req, res, next) => {
   const theId = suoyinData.filter((e) => {
     return String(e.symptoms).includes(req.params.name);
   });
@@ -440,7 +440,7 @@ app.get("/zhenghou/:name", (req, res, next) => {
 //告知症候ID 返回实际可治疗的草药编号列表
 
 app.get(
-  "/reality/:id",
+  "/.netlify/functions/server/reality/:id",
   catchAsync(async (req, res, next) => {
     const result = await Model.find()
       .where("症候编号")
@@ -467,7 +467,7 @@ app.get(
 //告知症候ID 返回预测可治疗的草药编号列表
 
 app.get(
-  "/prediction/:id",
+  "/.netlify/functions/server/prediction/:id",
   catchAsync(async (req, res, next) => {
     let result = await Model.find()
       .where("症候编号")
