@@ -449,17 +449,9 @@ app.get(
       .equals(1)
       .select("-预测该草药是否可治疗该疾病");
 
-    let newData = [];
-
-    for (let sing of result) {
-      const tem = await Caoyao.findOne().where("ID").equals(sing.中草药编号);
-
-      newData.push({ ...sing._doc, caoyao_name: tem.caoyao_name });
-    }
-
     res.status(200).json({
       status: "scuess",
-      newData,
+      result,
     });
   })
 );
@@ -476,17 +468,9 @@ app.get(
       .equals(1)
       .select("-实际该草药是否可治疗该疾病");
 
-    let newData = [];
-
-    for (let sing of result) {
-      const tem = await Caoyao.findOne().where("ID").equals(sing.中草药编号);
-
-      newData.push({ ...sing._doc, caoyao_name: tem.caoyao_name });
-    }
-
     res.status(200).json({
       status: "scuess",
-      newData,
+      result,
     });
   })
 );

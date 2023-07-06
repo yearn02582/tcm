@@ -104,13 +104,13 @@ function App() {
         <List
           header={<h2>实际可治疗该疾病的草药ID</h2>}
           bordered
-          dataSource={realityData?.data?.newData}
+          dataSource={realityData?.data?.result}
           renderItem={(item) => {
             if (!item) return;
-            console.log(item);
+
             return (
               <List.Item style={{ fontSize: "1.4rem" }}>
-                {item.caoyao_name}
+                {item.中草药名称}
               </List.Item>
             );
           }}
@@ -119,10 +119,10 @@ function App() {
         <List
           header={<h2>预测可治疗该疾病的草药ID</h2>}
           bordered
-          dataSource={predictionData?.data?.newData}
+          dataSource={predictionData?.data?.result}
           renderItem={(item) => {
             if (!item) return;
-            return <List.Item>{item.caoyao_name}</List.Item>;
+            return <List.Item>{item.中草药名称}</List.Item>;
           }}
         ></List>
       </div>
